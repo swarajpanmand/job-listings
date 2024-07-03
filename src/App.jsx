@@ -12,7 +12,7 @@ function App() {
     role: [],
     technology: [],
     experience: '',
-    ctc: [0, 15],
+    ctc: 15, // Change this from [0, 15] to 15
   });
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function App() {
       filtered = filtered.filter(job => job.experience === newFilters.experience);
     }
     if (newFilters.ctc) {
-      filtered = filtered.filter(job => job.ctc >= newFilters.ctc[0] && job.ctc <= newFilters.ctc[1]);
+      filtered = filtered.filter(job => job.ctc <= newFilters.ctc);
     }
     setFilteredJobs(filtered);
   };

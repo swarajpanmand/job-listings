@@ -1,6 +1,7 @@
 // src/JobList.js
 import React from 'react';
 import JobCard from './JobCard';
+import './App.css'
 
 function JobList({ jobs }) {
   return (

@@ -18,8 +18,10 @@ function Filters({ filters, onFilterChange }) {
   };
 
   const handleCtcChange = (e) => {
-    onFilterChange({ ...filters, ctc: [e.target.value[0], e.target.value[1]] });
+    const value = parseInt(e.target.value, 10);
+    onFilterChange({ ...filters, ctc: value });
   };
+  
 
   return (
     <div className="filters">
@@ -41,7 +43,12 @@ function Filters({ filters, onFilterChange }) {
         ))}
       </select>
 
-      <input type="range" min="0" max="15" step="1" value={filters.ctc} onChange={handleCtcChange} />
+      <div className="filter-ctc">
+        <input type="range" min="0" max="15" step="1" value={filters.ctc} onChange={handleCtcChange} />
+        <p>Current CTC: {filters.ctc}</p>
+      </div>
+
+      
     </div>
   );
 }

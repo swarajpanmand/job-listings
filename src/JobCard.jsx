@@ -1,5 +1,6 @@
 // src/JobCard.js
 import React from 'react';
+import './App.css';
 
 function JobCard({ job }) {
   return (
@@ -9,7 +10,7 @@ function JobCard({ job }) {
       <p>{job.company}</p>
       <p>{job.location}</p>
       <p>{job.ctc} LPA</p>
-      <p>{job.experience} Experience</p>
+      <p>{job.experience} </p>
       <p>{job.technology.join(', ')}</p>
     </div>
   );
