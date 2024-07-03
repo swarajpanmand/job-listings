@@ -6,9 +6,11 @@ import './App.css'
 function JobList({ jobs }) {
   return (
     <div className="job-list">
-      {jobs.map(job => (
-        <JobCard key={job.id} job={job} />
-      ))}
+      {jobs.length > 0 ? (
+        jobs.map(job => <JobCard key={job.id} job={job} />)
+      ) : (
+        <p>No jobs found matching your criteria.</p>
+      )}
     </div>
   );
 }

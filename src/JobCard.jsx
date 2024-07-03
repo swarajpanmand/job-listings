@@ -7,11 +7,15 @@ function JobCard({ job }) {
     <div className="job-card">
       <img src={job.logo} alt={`${job.company} logo`} />    
       <h3>{job.position}</h3>
-      <p>{job.company}</p>
-      <p>{job.location}</p>
-      <p>{job.ctc} LPA</p>
-      <p>{job.experience} </p>
-      <p>{job.technology.join(', ')}</p>
+      <p className="company">{job.company}</p>
+      <p className="location">{job.location}</p>
+      <p className="ctc">{job.ctc} LPA</p>
+      <p className="experience">{job.experience}</p>
+      <div className="technologies">
+        {job.technology.map((tech, index) => (
+          <span key={index} className="tech-tag">{tech}</span>
+        ))}
+      </div>
     </div>
   );
 }

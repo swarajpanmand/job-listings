@@ -12,7 +12,7 @@ function App() {
     role: [],
     technology: [],
     experience: '',
-    ctc: 15, // Change this from [0, 15] to 15
+    ctc: 15,
   });
 
   useEffect(() => {
@@ -44,6 +44,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Job Listings</h1>
       <Filters filters={filters} onFilterChange={handleFilterChange} />
       <JobList jobs={filteredJobs} />
     </div>
